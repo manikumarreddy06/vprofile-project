@@ -1,6 +1,6 @@
 version: '3.8'
 services:
- vprodb:
+  vprodb:
     build:
       context: ./Docker-files/db
     image: vprocontainers/vprofiledb
@@ -26,7 +26,7 @@ services:
     - RABBITMQ DEFAULT USER=guest
     - RABBITMQ DEFAULT PASS=guest
 
- vproapp:
+  vproapp:
     build:
       context: ./Docker-files/app
     image: vprocontainers/vprofileapp
@@ -36,7 +36,7 @@ services:
     volumes:
       - vproappdata:/usr/local/tomcat/webapps
 
- vproweb:
+  vproweb:
     build:
       context: ./Docker-files/web
     image: vprocontainers/vprofileweb
